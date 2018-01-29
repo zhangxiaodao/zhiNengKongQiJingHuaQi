@@ -1,0 +1,186 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+
+//全屏幕的frame
+#define kScreenFrame [UIScreen mainScreen].bounds
+//全屏幕的宽
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+//全屏幕的高
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+
+//设备缓存
+#define kStanderDefault [NSUserDefaults standardUserDefaults]
+//网络单利
+#define kNetWork [CZNetworkManager shareCZNetworkManager]
+
+// 是否是 iPhone X
+#define kWhetheriPhoneX (kScreenW == 375.0 && kScreenH == 812.0 ?true:false)
+//nav 的高度
+#define kNavibarH  (kWhetheriPhoneX ? 88.0 : 64.0)
+//tabbar 的高度
+#define kTabbarH  (kWhetheriPhoneX ? 49.0+34.0 : 49.0)
+//starusbar 的高度
+#define kStatusbarH  (kWhetheriPhoneX ? 44.0 : 20.0)
+
+#define kCGSizeMake CGSizeMake(0, kScreenW / 10)
+#define kBigText 18
+#define kLittleText 12
+#define kHeight 64
+#define kNavHeight 44
+#define kTabBarHeight 48
+
+#define BackGroupHeight kScreenW / 1.7
+
+#define kVersion @"5.6.7"
+
+#define kServiceOrder @"ServiceOrder" 
+
+#define kXinTiao @"xinTiao"
+#define kZhiLing @"zhiLing"
+#define kLianJie @"lianJie"
+#define kAddService @"addService"
+#define kQuite @"quite"
+
+
+#define kNew @"new"
+#define kOld @"old"
+
+#define kFontWithName @"STHeitiSC-Light"
+
+
+#define kKongJingLvXinShouMing 1600
+#define kSumLvWangJieDu 800
+
+#define kLengFengShanShuiWei 720
+#define kLengFengShanSumLvWang 700
+#define kLengFengShanBingJing 2400
+
+#define kXinFengLvXinTime 2700
+
+
+#define kMainColor [UIColor colorWithRed: 28/255.0  green: 164/255.0  blue: 252/255.0  alpha: 1.0]
+#define kLvSe [UIColor colorWithRed: 34/255.0  green: 191/255.0  blue: 100/255.0  alpha: 1.0]
+#define kRandomColor [UIColor colorWithRed:arc4random()% 256 / 256.0 green:arc4random() % 256 / 256.0 blue:arc4random() % 256 / 256.0 alpha:1.0]
+#define kKongJingYanSe [UIColor colorWithRed:50/255.0 green:201/255.0 blue:218/255.0 alpha:1.0]
+#define kKongJingHuangSe [UIColor colorWithRed:250/255.0 green:201/255.0 blue:77/255.0 alpha:1.0]
+#define kFenGeXianYanSe [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]
+#define kCangBaiSe [UIColor colorWithRed:218/255.0 green:235/255.0 blue:254/255.0 alpha:1.0]
+#define kZiSe [UIColor colorWithRed:182/255.0 green:157/255.0 blue:221/255.0 alpha:1.0]
+#define kWhiteColor [UIColor whiteColor]
+
+//#define kXinFengKongJingYanSe [UIColor colorWithRed:28/255.0 green:157/255.0 blue:247/255.0 alpha:1.0]
+
+#define kXinFengKongJingYanSe kACOLOR(28, 157, 247, 1.0)
+
+
+#define kDaMi 25
+
+#define kNavHidth kScreenH / 14
+
+#define kStandardW kScreenW / 1.47
+#define kCommonW (kScreenW - kScreenW / 8)
+
+//把数值转化为对应的PI值
+#define degreesToRadians(x) (M_PI*(x) / 180.0)
+
+//商标的大小
+#define kShangBiaoW kScreenW / 3
+#define kShangBiaoH kScreenW / 3
+
+#import "Masonry.h"
+#import "UIView+Extension.h"
+#import "UILabel+Custom.h"
+#import "UITextField+Custom.h"
+#import "UIButton+Custom.h"
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "NSObject+GetDeviceModel.h"
+#import "UIAlertController+Custom.h"
+#import "UserModel.h"
+#import "HelpFunction.h"
+#import "SDWebImageManager.h"
+#import "UIImageView+WebCache.h"
+#import "ServicesDataModel.h"
+#import "StateModel.h"
+#import "ServicesModel.h"
+#import "Singleton.h"
+#import "UIImage+Extension.h"
+#import "UIImageView+Extension.h"
+#import "NSString+Extension.h"
+#import "UIColor+Extensions.h"
+#import "UIViewController+Swizzled.h"
+#import "AddServiceModel.h"
+#import "UIBarButtonItem+Extension.h"
+#import "SVProgressHUD.h"
+#import "TabBarViewController.h"
+#import "CZNetworkManager.h"
+#import "CZPlistTools.h"
+#import "ZHCTools.h"
+#import "HeaderUrl.h"
+#import "HeaderTitleSize.h"
+#import "YYModel.h"
+#import "Header.h"
+
+
+#define kApplicate (AppDelegate *)[UIApplication sharedApplication].delegate
+#define kWindowRoot [UIApplication sharedApplication].keyWindow.rootViewController
+#define kContext ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext
+#define kSocketTCP [Singleton sharedInstance]
+
+#define iOS10 ([[UIDevice currentDevice].systemVersion doubleValue] >= 10.0)
+#define kTools [ZHCTools shareZHCTools]
+#define kPlistTools [CZPlistTools shareCZPlistTools]
+// 友盟分享
+#define kUMAppKey @"56e40fc3e0f55ad89b000921"
+
+//#define kDeviceSn [kStanderDefault objectForKey:@"deviceSn"]
+
+
+// 个推开发者网站中申请App时，注册的AppId、AppKey、AppSecret
+#define kGtAppId @"TWxme3OkYjA89rlIuBgyE2"
+#define kGtAppKey @"tzVHOHA6N36htmftfUwq3A"
+#define kGtAppSecret @"JAVioqKoyp96woS4wXSDC6"
+
+//#define kGtAppId @"IhitQTqgjZ5DoGh7bpXGg5"
+//#define kGtAppKey @"uH4oBMNYTZAXWd1u8BWPd2"
+//#define kGtAppSecret @"qcJaJxvkNH6RaycybdxUE2"
+
+/**
+ *  干衣机协议宏定义
+ */
+
+#define kCOLOR(R, G, B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1.0]
+
+#define kACOLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+
+#define GanYiJiXieYi(devTypeSn , devSn , kaiGuan , dangWei , shaJun , fuLiZi) [NSString stringWithFormat:@"HMFFA%@%@w%@%@%@%@000000000000000000000000#" , devTypeSn , devSn , kaiGuan , dangWei , shaJun , fuLiZi]
+
+#define GanYiJi4332SendToHostXieYi(devTypeSn , devSn , kaiGuan , ozone , power , time) [NSString stringWithFormat:@"HMFFM%@%@w0%@0%@000000000%@0000%@000000000000#" , devTypeSn , devSn , kaiGuan , ozone , power , time]
+
+
+#define HotColdFan4133SendToHostXieYi(devTypeSn , devSn , kaiGuan , windType , wind , shaking , ions , coldWind , hot , childLock , time , waterlevel , malfunction) [NSString stringWithFormat:@"HMFFA%@%@w0%@0%@0%@0%@0%@0%@0%@0%@ 00%@0%@0%@00000000#" , devTypeSn , devSn , kaiGuan , windType , wind , shaking , ions , coldWind , hot , childLock , time , waterlevel , malfunction]
+
+#define TCLFan4134SendToHostXieYi(devTypeSn , devSn , kaiGuan , windType , wind , shaking , time , temperature , malfunction) [NSString stringWithFormat:@"HMFFM%@%@w0%@0%@0%@0%@0000000000%@%@0%@00000000#" , devTypeSn , devSn , kaiGuan , windType , wind , shaking , time , temperature , malfunction]
+
+#define ColdFan4131SendToHostXieYi(devTypeSn , devSn , orderType , order) [NSString stringWithFormat:@"HMFF%@%@%@%@#" , devTypeSn , devSn , orderType , order]
+
+#define XinFengKongJing(devTypeSn , devSn , kaiGuan , ziDongOrShouDong , caiDeng , fuLiZi , fengSu , pm25Check) [NSString stringWithFormat:@"HMFFA%@%@w%@%@%@%@0000%@00000000000000%@%@00%@000000000000#" , devTypeSn , devSn , kaiGuan , ziDongOrShouDong , caiDeng , fuLiZi , fengSu , [[NSString sendXinFengNowTime] firstObject] , [[NSString sendXinFengNowTime] lastObject] , pm25Check]
+#define XinFengKongJingTime(devTypeSn , devSn , kaiGuan , ziDongOrShouDong , caiDeng , fuLiZi , fengSu , hourTime , minuteTime) [NSString stringWithFormat:@"HMFFA%@%@w%@%@%@%@0000%@0000%@%@000000%@%@0000000000000000#" , devTypeSn , devSn , kaiGuan , ziDongOrShouDong , caiDeng , fuLiZi , fengSu , hourTime , minuteTime, [[NSString sendXinFengNowTime] firstObject] , [[NSString sendXinFengNowTime] lastObject]]
+#define XinFengKongJingSetTime(devTypeSn , devSn , hourTime , minuteTime) [NSString stringWithFormat:@"HMFFA%@%@w0000000000000000000000000000%@%@0000000000000000#" , devTypeSn , devSn , hourTime , minuteTime]
+#endif

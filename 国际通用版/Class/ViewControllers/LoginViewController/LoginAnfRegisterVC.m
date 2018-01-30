@@ -245,7 +245,7 @@
             } else {
                 [UIAlertController creatCancleAndRightAlertControllerWithHandle:^{
                     [self.alertMessageView clearNumber];
-                } andSuperViewController:self Title:@"验证码填写错误"];
+                } andSuperViewController:self Title:@"号码填写错误"];
             }
         } failure:^(NSError * _Nonnull error) {
             [kNetWork noNetWork];
@@ -326,7 +326,7 @@
                     self.pwdTectFiled.text = nil;
                 }];
             } else {
-                [self setAlertText:@"验证码填写错误"];
+                [self setAlertText:@"号码填写错误"];
             }
         } failure:^(NSError * _Nonnull error) {
             [kNetWork noNetWork];

@@ -1678,7 +1678,7 @@
 				INFOPLIST_FILE = "国际通用版/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haiChang.weiMingMing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haiChang.zhiNengKongJing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1698,7 +1698,7 @@
 				INFOPLIST_FILE = "国际通用版/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haiChang.weiMingMing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haiChang.zhiNengKongJing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
